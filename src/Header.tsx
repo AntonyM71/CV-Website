@@ -38,6 +38,24 @@ const Header = () => (
                         </Typography>
                     </ListItemText>
                     <ListItemText inset>
+                        <Typography color="textPrimary" variant="body1">
+                            <Link
+                                component={RouterLink}
+                                to={routes.projects.root}
+                                color="inherit"
+                            >
+                My Projects
+                            </Link>
+                        </Typography>
+                    </ListItemText>
+                    <ListItemText inset>
+                        <Typography color="textPrimary" variant="body1">
+                            <Link component={RouterLink} to="/linkedin" color="inherit">
+                Linkedin
+                            </Link>
+                        </Typography>
+                    </ListItemText>
+                    <ListItemText inset>
                         <DarkModeButton />
                     </ListItemText>
                 </ListItem>
