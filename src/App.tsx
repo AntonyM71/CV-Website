@@ -1,26 +1,25 @@
+import Container from "@material-ui/core/Container/Container";
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { ToastProvider } from "react-toast-notifications";
+import { RecoilRoot } from "recoil";
 import "./App.css";
-import logo from "./logo.svg";
-function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1>Antonys Placeholder Website</h1>
-                <p>
-					Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-					Learn React
-                </a>
-            </header>
-        </div>
-    );
-}
+import Header from "./Header";
+import Router from "./routes/Router";
+import Theme from "./styles/Theme";
+const App = () => (
+  <RecoilRoot>
+    <BrowserRouter>
+      <Theme>
+        <ToastProvider autoDismiss autoDismissTimeout={3000}>
+          <Header />
+          <Container maxWidth={false}>
+            <Router />
+          </Container>
+        </ToastProvider>
+      </Theme>
+    </BrowserRouter>
+  </RecoilRoot>
+);
 
 export default App;
