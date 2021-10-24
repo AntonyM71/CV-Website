@@ -1,6 +1,6 @@
 import { CssBaseline, useMediaQuery } from "@material-ui/core"
 import { cyan, orange, red } from "@material-ui/core/colors"
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
+import { createTheme, ThemeProvider } from "@material-ui/core/styles"
 import React, { useLayoutEffect, useMemo } from "react"
 import { useRecoilState } from "recoil"
 import { preferDarkState } from "../recoil/atoms"
@@ -15,25 +15,25 @@ function Theme({ children }: { children: React.ReactNode }) {
 
     const theme = useMemo(
         () =>
-            createMuiTheme({
+            createTheme({
                 palette: {
                     type: preferDark ? "dark" : "light",
                     primary: {
                         main: orange[800],
                         light: orange[500],
-                        dark: orange[900],
+                        dark: orange[900]
                     },
                     secondary: {
                         main: cyan[500],
                         light: cyan[300],
-                        dark: cyan[700],
+                        dark: cyan[700]
                     },
                     error: {
                         main: red[500],
                         light: red[300],
-                        dark: red[700],
-                    },
-                },
+                        dark: red[700]
+                    }
+                }
             }),
         [preferDark]
     )
