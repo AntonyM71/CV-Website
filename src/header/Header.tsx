@@ -10,8 +10,8 @@ import Brightness4Icon from "@material-ui/icons/Brightness4"
 import React from "react"
 import { Link as RouterLink } from "react-router-dom"
 import { useRecoilState } from "recoil"
-import { preferDarkState } from "./recoil/atoms"
-import { routes } from "./routes/Router"
+import { preferDarkState } from "../recoil/atoms"
+import { routes } from "../routes/Router"
 
 const Header = () => (
     <AppBar position="static" color="default" elevation={0}>
@@ -26,14 +26,18 @@ const Header = () => (
                                 to={routes.home.root}
                                 color="inherit"
                             >
-                Home
+                                Home
                             </Link>
                         </Typography>
                     </ListItemText>
                     <ListItemText inset>
                         <Typography color="textPrimary" variant="body1">
-                            <Link component={RouterLink} to={routes.cv.root} color="inherit">
-                CV
+                            <Link
+                                component={RouterLink}
+                                to={routes.cv.root}
+                                color="inherit"
+                            >
+                                CV
                             </Link>
                         </Typography>
                     </ListItemText>
@@ -44,14 +48,18 @@ const Header = () => (
                                 to={routes.projects.root}
                                 color="inherit"
                             >
-                My Projects
+                                My Projects
                             </Link>
                         </Typography>
                     </ListItemText>
                     <ListItemText inset>
                         <Typography color="textPrimary" variant="body1">
-                            <Link component={RouterLink} to="/linkedin" color="inherit">
-                Linkedin
+                            <Link
+                                component={RouterLink}
+                                to="/linkedin"
+                                color="inherit"
+                            >
+                                Linkedin
                             </Link>
                         </Typography>
                     </ListItemText>
@@ -73,7 +81,7 @@ export const DarkModeButton = () => {
     return (
         <IconButton
             color="default"
-            aria-label={"darkModeButton"}
+            data-testid="darkModeButton"
             onClick={handleDarkModePress}
         >
             <Brightness4Icon />

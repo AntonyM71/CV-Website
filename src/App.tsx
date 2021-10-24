@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 import { ToastProvider } from "react-toast-notifications"
 import { RecoilRoot } from "recoil"
 import "./App.css"
-import Header from "./Header"
+import Header from "./header/Header"
 import Router from "./routes/Router"
 import Theme from "./styles/Theme"
 const App = () => (
